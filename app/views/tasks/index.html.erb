@@ -1,0 +1,7 @@
+<h1>Here are my tasks</h1>
+
+<div class="cards">
+  <%= @tasks.each do |t| %>
+    <%= t.title, t.details %>
+  <% end -%>
+</div>
