@@ -1,7 +1,14 @@
 <h1>Here are my tasks</h1>
 
 <div class="cards">
-  <%= @tasks.each do |t| %>
-    <%= t.title, t.details %>
-  <% end -%>
+  <ul>
+    <% @tasks.each do |t| %>
+      <li><%= link_to t.title, task_path(t.id) %> <%= link_to "Delete",
+            task_path(t),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+    <% end -%>
+  </ul>
 </div>
+
+<%= link_to "Add a new task", new_path  %>
